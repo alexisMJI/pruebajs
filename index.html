@@ -1,17 +1,116 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Probando gittt</title> 
-    
-    <script type="text/javascript" src="holamundo.js"></script>
-</head>
-<body>
-    <p>esto es un parrafo</p>
-    <li>dasas</li>
-</body>
-<!--esto es un comentario nuevo
-esto es otro comentario nuevo
-esto es otro comentario
--->
+
+	<head>
+        <meta charset="utf-8"/>
+        <title>Esto es un titulo</title>
+        <!--
+        <script type="text/javascript">
+            alert("Hola mundo con JavaScript");
+        </script>-->
+
+        <script type="text/javascript" src="/holamundo.js"></script>
+
+    </head>
+
+	<body>
+		<h1>Este es El titulo mas importante de la pagina</h1>
+		<h2>Bienvenidos a mi web</h2>
+		<p>
+			Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to <br><br/> make a type specimen book.  It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It <hr> was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker <strong> esto es un strong</strong> including <em>esto es un em</em> versions of <span id="resaltado" class="rojo amarillo">Esto es un span sirve para luego css modificar esto</span> Lorem Ipsum.<blockquote>esto seria una cita psadfgasdf asdfasdf asdfasdf asdfasdf </blockquote>
+
+			<!-- Esto seria una lista ordenada "ol" los "li" son los elementos-->
+			<h3>LISTADO DE FRUTAS</h3>
+			<ol>
+				<li> manzana
+					<ol>
+						<li>roja</li>
+						<li>verde</li>
+					</ol>
+				</li>
+				<li>pera</li>
+				<li>banana</li>
+				<li>naranja</li>
+			</ol>
+			<!-- Esto seria una lista desosrdenada "ul" los "li" son los elementos-->
+			<h3>LISTADO DE asdasd</h3>
+			<ul>
+				<li>asdasd</li>
+				<li>asdasd</li>
+				<li>asddasd</li>
+				<li>asdasd</li>
+			</ul>
+
+			<hr/>
+			<h3>Esto es un apartado</h3>
+			<!-- ruta absoluta-->
+			<img src="D:\Usos freq\Folders Alex\ftos SIBA\IMG_20201120_143135.jpg" alt="Imagenn" title="titulo de la foto" width="200" height="200">
+			<!-- ruta relativa-->
+			<img src="imagenes\IMG_20201120_143135.jpg" alt="Imagen" title="tituo de la foto" width="200" height="200">
+			<hr/>
+
+			<h3>Tablas</h3>
+			<table border="1">
+				<tr><!-- fila-->
+					<th><!-- columna-->Nombre </th>
+					<th>Apellido</th>
+					<th>DNI</th>
+					<th>Domicilio</th>
+				</tr>
+
+				<tr>
+					<td><!-- columna-->Alexis </td>
+					<td>Marin</td>
+					<td>42122588</td>
+					<td>fragata libertad 2222</td>
+				</tr>
+
+				<tr>
+					<td><!-- columna-->Camila </td>
+					<td>Godoy</td>
+					<td>41122000</td>
+					<td>fragat 2</td>
+				</tr>
+
+
+
+			</table>
+
+
+			<hr/>
+			<h3>Formulario</h3>
+			<form action="" method="post">
+				<p>
+				<label for="nombre">Nombre</label>
+				<input type="text" name="nombre" placeholder="Escriba su nombre" />
+				</p>
+				<p>
+					<label for="descripcion">Descipcion</label>
+					<textarea name="descripcion"></textarea>
+				</p>
+				<hr>
+
+				<input type="radio" name="genero" value="Hombre">Hombre <br/>
+				<input type="radio" name="genero" value="Mujer">Mujer <br/>
+				<input type="radio" name="genero" value="Otro">Otro <br/>
+				
+				<p>Seleccione su rango etario</p>
+
+				<select name="rangoetario">
+					<option value="18-35años">18-35 años</option>
+					<option value="36-48años">36-48 años</option>
+					<option value="49-70años">49-70 años</option>
+				</select>
+
+				<input type="submit" value="Enviar formulario">
+
+
+			</form>
+
+			<a href="http://google.com" target="blank">Ir a google</a>
+			<a href="index.html">Ir a esta misma pagina</a>
+
+		</p>
+	</body>
+
 </html>
