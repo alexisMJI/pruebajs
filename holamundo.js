@@ -62,4 +62,7 @@ console.log("el nombre del usuario es "+nombreUsuario);
 var numeroIngresado = parseInt(prompt("ingresa un numero"));
 console.log(numeroIngresado+2);
 
-
+//---------------------------modificar cosas de html
+var cajaaa =document.getElementById("micaja").innerHTML;
+console.log(cajaaa);
+//----------------------------j
