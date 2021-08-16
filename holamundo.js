@@ -3,7 +3,7 @@
 Esto es un comentario
 */
 
-alert("Hola mundo con JavaScriptt");
+
 document.write("esto esta escrito desde JS");
 console.log("asdas aparece en la consola");
 
@@ -31,7 +31,35 @@ console.log(prueba,ancho);
 año= 2021;
 console.log(año);
 alert("El año presente al momento de tipear esto es "+ año);
+//---------------------------------------------
 //variables y operadores
+var numeroFalso= "44";
+console.log(numeroFalso);
+console.log(Number(numeroFalso)+10);
+console.log(parseInt(numeroFalso)+10);
+console.log(parseFloat(numeroFalso)+10.01);
 
+console.log(typeof numeroFalso);
+
+for (let i = 0; i <= 20; i++){ 
+    console.log(i);
+    //debugger;
+}
+//--------------------------kmjhkjh
+//alertas y ventanas para ingreso de datos
+alert("Hola mundo con JavaScriptt");
+
+var booleann =confirm("quieres poner verdadero o falso?");
+
+if(booleann == true)
+    console.log("El usuario elegio poner verdadero");
+else 
+    console.log("El usuario elegio poner falso");
+
+var nombreUsuario= prompt("ingresa tu nombre");
+console.log("el nombre del usuario es "+nombreUsuario);
+
+var numeroIngresado = parseInt(prompt("ingresa un numero"));
+console.log(numeroIngresado+2);
 
 
