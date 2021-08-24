@@ -63,6 +63,11 @@ var numeroIngresado = parseInt(prompt("ingresa un numero"));
 console.log(numeroIngresado+2);
 
 //---------------------------modificar cosas de html
-var cajaaa =document.getElementById("micaja").innerHTML;
-console.log(cajaaa);
-//----------------------------j
+//var cajita=document.getElementById("micaja").innerHTML;
+var cajita= document.querySelector('#micaja');
+console.log(cajita);
+
+document.getElementById('micaja').innerHTML = '<h3>Hola que tal</h3>';
+
+
+
