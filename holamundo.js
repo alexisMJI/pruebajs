@@ -69,5 +69,6 @@ console.log(cajita);
 
 document.getElementById('micaja').innerHTML = '<h3>Hola que tal</h3>';
 
+//seguimos con los cambios de html sobre js
 
 
