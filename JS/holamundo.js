@@ -113,7 +113,7 @@ BLUR
 KEYDOWN
 KEYUP
 */
-
+/*
 var botonform1;
 botonform1= document.getElementById( "btnform" );
 botonform1.addEventListener( "click" , function ()
@@ -139,10 +139,11 @@ inputt1.addEventListener( "keydown" , function ()
 inputt1.addEventListener( "keypress" , function (event)
     { 
     console.log("[keypress]tecla presionada",String.fromCharCode(event.AT_TARGET));});   
-
+*/
 /*
 Otro tema que se ve es que podemos poner nuestro script en html al principio
-y para que funcione bien, vamos a poner window.addeventlistener("load" function (){tdo el codigo que creamos}
+y para que funcione bien, vamos a poner window.addeventlistener("load" function ()
+{tdo el codigo que creamos}
 sirve para ejecutar el codigo cuando todo el html este cargado
 */
  //Otro tema es los timers
@@ -168,12 +169,21 @@ esta en la seccion 19 de los videos
 AHORA LO VEMOS UN POCO
 */
 
-var formulario= document.getElementById("form1");
-formulario.addEventListener("submit", function(){
-    console.log("se ejecuto el submit");
-    var nombree= document.getElementById("nombreee").value;
-    console.log(nombree);
-    return false;
+var formulario= document.getElementById("form2");
 
-})
+formulario.addEventListener("submit", enviarDatos,false);
+
+function enviarDatos(e)
+{
+    var apellido = document.getElementById("inputApe");
+    if(apellido.value=="")
+    {alert("los campos estan vacios");
+     e.preventDefault();
+     return false;
+     }else {alert(apellido.value);    
+            e.preventDefault();
+            //return true;
+            }
+
+}
 
