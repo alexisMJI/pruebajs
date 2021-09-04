@@ -79,10 +79,11 @@
 			
 			<hr/>
 			<h3>Formulario</h3>
-			<form action="" method="post">
+			<form action="#" method="POST" id="form1" consubmit="return false;">
 				<p>
 				<label for="nombre">Nombre</label>
-				<input type="text" name="nombre" placeholder="Escriba su nombre" />
+				<input type="text" name="nombre" placeholder="Escriba su nombre" id="nombreee"/>
+				<input type="submit">
 				</p>
 				<p>
 					<label for="descripcion">Descipcion</label>
@@ -102,7 +103,7 @@
 					<option value="49-70años">49-70 años</option>
 				</select>
 
-				<input type="submit" value="Enviar formulario">
+				
 
 
 			</form>
@@ -125,6 +126,16 @@
 				No papaaa, Hace Click aca
 			</button>
 		</p>
+
+		<hr/>
+
+		<p>
+			<label for="apellido">Apellido:</label>
+				<input type="text" name="apellido" id="input1" />
+
+			<button id=btnform> Aceptar</button>
+		</p>
+		<button id=btntime> Parar time</button>
 
 		<script type="text/javascript" src="holamundo.js"></script>
 	</body>
