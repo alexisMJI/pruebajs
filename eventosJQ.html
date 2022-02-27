@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html lang="es">
+        <head>
+                <meta charset="utf-8"/>
+                <title>Febrero de JS JQ y Eventos</title>
+                <script type="text/javascript" src="JS/jquery/jquery-3.6.0.min.js"></script>
+                <script type="text/javascript" src="JS/eventosJQ.js"></script>
+                <style>
+                    input{
+                        padding: 12px;
+                        width: 150px;
+                        font-size: 12px;
+                    }
+
+                </style>
+        </head>
+        <body>
+	        <h1>Aprendiendo Jquery con Eventos</h1>
+            
+            <form>
+                <input type="text" id="nombre" />
+            </form>
+
+            <br>
+
+            <div id="caja">
+                Soy una caja
+            </div>
+
+            <h3>Agregar nuevos enlaces</h3>
+            <input type="texto" id="addLink" />
+            <button id="addButton">Agregar</button>
+            <ul id="menu">
+                <a href="https://www.google.com"></a>
+                <a href="https://www.udemy.com"></a>
+                <a href="https://developer.mozilla.org/es/"></a>
+
+            </ul>
+            
+            <h3>Probando efectos</h3>
+            <button id="mostrar">Mostrar</button>
+            <button id="ocultar">Ocultar</button>
+            <div id="cajita">
+                Maximo Virgolini
+            </div>
+
+        </body>
+
+</html>
+<!--
+    aca podemos darle atributos css y tambien cuando pase por
+    un lado el cursor hacer q lo afecte reloko
+    en js se puede hacer porq se podria considerar
+    como un evento
+
+<style>
+    #caja{
+        width: 250px;
+        height: 150px;
+        border: 1px;
+        background: yellow;
+    }   
+
+    #caja:hover{
+        
+        background: red;
+    } 
+
+
+</style>-->
