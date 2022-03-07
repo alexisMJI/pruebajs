@@ -78,15 +78,104 @@ $(document).ready(function(){
     //vamos a ver Efectos
     btnOcultar= $('#ocultar');
     btnMostrar= $('#mostrar');
-    var cajita= $('#cajita');
+    var cajita= $('#cajita1');
+    var caja2= $('#cajita2');
+
+    btnMostrar.hide();
 
     btnOcultar.click(function(){
-        cajita.hide();
+        cajita.hide('normal');
+        btnOcultar.hide();
+        btnMostrar.show();
     })
 
     btnMostrar.click(function(){
-        cajita.show();
+        cajita.fadeIn('normal');
+        btnMostrar.hide();
+        btnOcultar.show();
     })
+
+    //ahora vamos  a hacer lo mismo pero sion la necidad de dos botones
+    btnTodoenUno= $('#AiO');
+
+    btnTodoenUno.click(function(){
+        caja2.toggle();
+    })
+
+    
+    //PETICIONES AJAZ CON JQUERY
+    //Metodo Load -> Carga los datos de un servidor y pone los datos devueltos en el elemento seleccionado
+    var datos = $('#cajaDatos');
+    //datos.load("https://swapi.dev/api/");
+    
+    //GET
+    //Carga los datos de un servidor a través de un HTTP AJAX GET solicitud
+    $.get("https://swapi.dev/api/planets/1/",function(response){
+        console.log(response);
+        datos.append("<p>"+"El nombre del planeta es: "+response.name+" su clima es: "+response.climate+"</p>");
+    });
+    
+    $.get("https://reqres.in/api/users",{page: 1}, function(r){
+        
+            r.data.forEach((element, index) => {
+                datos.append("<p>"+element.first_name+" "+element.last_name+"</p>");
+            });
+            
+        
+    });
+    /*
+    //POST
+    //Carga los datos de un servidor mediante una solicitud POST HTTP AJAX
+    //harcodeando el alta de un user
+    var usuario1 = {
+        "name": "Liliana",
+        "job": "Cajera"
+    }
+    $.post("https://reqres.in/api/users", usuario1, function(r){
+        console.log(r);
+    });
+    //probamos con un form para q sea + dinamico
+    var formcarga =  $('#cargaUsers');
+    
+    
+    formcarga.submit(function(event){
+        event.preventDefault(); //por alguna razon al hacer post te redirige a otra pag, para evitar eso usamos este metodo o r false
+        var usuario = {
+            name: $('input[name="name"]').val(),
+            job: $('input[name="job"]').val()
+        }
+        $.post(, usuario, function(response){
+            console.log(response);
+        }).done(f=>{
+            alert("usuario creado")
+        })
+        return false; 
+    });
+    */
+    //AJAX
+    var formcarga =  $('#cargaUsers');
+    formcarga.submit(function(event){
+        event.preventDefault(); //por alguna razon al hacer post te redirige a otra pag, para evitar eso usamos este metodo o r false
+        var usuario = {
+            name: $('input[name="name"]').val(),
+            job: $('input[name="job"]').val()
+        }
+        $.ajax({
+            type: 'POST',
+            url: "https://reqres.in/api/users",
+            data: usuario,
+            beforeSend: function(){
+            console.log("Enviando usaurio..");
+            },
+            success: function(response){
+            console.log(response);
+            },
+            error: function(){
+            console.log("A ocurrido un error");
+            },
+            timeout: 2000
+        });
+    });
 
 
 })
