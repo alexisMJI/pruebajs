@@ -186,33 +186,104 @@ function enviarDatos(e)
             }
 
 }
-var div_usuarios = document.getElementById("dUsuarios")
-var usuarios = [];
+//************************************************ */
 //ahora vamos a ver una peticion fetch
-fetch('https://reqres.in/api/users')
-  .then(data => data.json())
-  .then(data => {
-      usuarios= data;
-      console.log(usuarios);
-
-      usuarios.map((users, i) =>{
-        let nombre = document.createElement('h3');
-
-        nombre.innerHTML = i + '. ' + users.first_name + " " + users.last_name;
-
-        div_usuarios.appendChild(nombre);
-
-        //document.querySelector(".loading").style.displa = 'none';
+var div_usuarios = document.getElementById("dUsuarios");
+var usuarios = [];
+var div_janet = document.getElementById("dJanet");
 
 
-      }
+function getUsuarios(){
+    return fetch('https://reqres.in/api/users');
+}
+
+
+function getJanet(){
+  return fetch('https://reqres.in/api/users/2');
+}
+
+function listadoUsuarios (usuarios){
+  usuarios.map((users, i) =>{//El método map() crea un nuevo vector (array, o matriz unidimensional) ejecutando una función en cada uno de los elementos del vector. Al mismo tiempo no ejecuta la función en elementos sin valor y no cambia el vector original
+      let nombre = document.createElement('h3');
+
+      nombre.innerHTML = i + '. ' + users.first_name + " " + users.last_name;
+
+      div_usuarios.appendChild(nombre);
+
+    });}
+
+    function mostrarJanet (user){
       
+          let nombre = document.createElement('h4');
+          let avatar = document.createElement('img');
 
-      );
+          nombre.innerHTML =  user.first_name + " " + user.last_name;
+          avatar.src = user.avatar;
+          avatar.width= '100';
+  
+          div_janet.appendChild(nombre);
+          div_janet.appendChild(avatar);
+      }
 
 
-  }
-    
-    
-    
-    );
+
+
+
+//ahora vamos a ver una peticion fetch para ejecutarlo 
+
+
+getUsuarios()
+  .then(data => data.json())//cuando tenga los resultados de la peticion ajax
+  .then(users => {//capturamelo y listame los usuarios
+        listadoUsuarios(users.data);
+
+        return getJanet();//luego devuelveme el usuario espexifico
+  })
+  .then(data => data.json())
+  .then(user =>{//lo metes dentro de la variable user
+    mostrarJanet(user.data);// y me lo mostras conesta funcion
+  });
+
+
+
+//**************************************************************
+function primerPromesa(){
+    return new Promise(function(resolve, reject){
+            let estudiaste = true;
+            if(estudiaste == true)
+                resolve("Aprobaste la materia");
+            else{
+                reject("Error");
+            }    
+    })
+
+}         
+
+//llamada para que se ejecute
+primerPromesa().then(function(acierto){
+    console.log(acierto);
+}).catch(function(error){
+    console.log(error);})
+/*-----------------------------------------------*/
+function segundaPromesa(){
+    return new Promise((resolve, reject) =>{
+            let estudiaste = true;
+            if(estudiaste == true)
+                resolve("Aprobaste la materia");
+            else{
+                reject("Error");
+            }    
+    })
+
+}  
+//************** 
+/*
+try {
+ let lunaladra = "ggggrrr";
+ alert(lunaladr);
+
+}catch
+
+99e9*/
+
+
