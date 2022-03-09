@@ -6,20 +6,67 @@
                 <script type="text/javascript" src="JS/jquery/jquery-3.6.0.min.js"></script>
                 <script type="text/javascript" src="JS/jquery/jquery-ui-1.13.1/jquery-ui.min.js"></script>
                 <script type="text/javascript" src="JS/JQUI.js"></script>
-               
+                <link rel="stylesheet" href="JS/jquery/jquery-ui-1.13.1/jquery-ui.min.css">
+                
+                <style>
+                        .listaSel li{
+                                width: 80%;
+                                padding: 20px;
+                                border: 1px solid black;
+                                list-style: none;
+                                cursor: pointer;
+                        }
+                        .listaSel .ui-selecting { background: red; }
+
+                        .listaSel .ui-selected { background: pink; color: white; }
+                        
+                        
+                </style>
+
         </head>
         <body>
 	        <h1>Usando un poco de Jquery UI</h1>
-            <br>
-            <div id="caja">
-                Soy una caja
-            </div>
+                <br>
+                <ul class="listaSel">
+                        <li>GTA V</li>
+                        <li>Elden Ring</li>
+                        <li>FIFA 22</li>
+                        <li>CS GO</li>
+                </ul>
+                <hr/>
+                <h3>Tooltip</h3>
+                <a href="#" id="aDatos" title="esto es un titulo de un a">mis datos</a>
+                <hr/>
+                
+                <button id="btnl">Lanzamiento</button>
+                <div id="cajaPopup" title="Estas seguro?" style="display: none">
+                        <p>
+                                Si estas seguro continua
+                        </p>
+                </div>
+                <hr/>
+                <h3>DatePicker</h3>
+                <input type="text" id="iCalend">
+                <hr/>
+                <h3>Pestanias</h3>
 
-            
-            
-          
-            
-            
+                <div id="divtabs">
+                        <ul>
+                                <li><a href="#divt1">Pestana 1</a></li>
+                                <li><a href="#divt2">Pestana 2</a></li>
+                                <li><a href="#divt3">Pestana 3</a></li>
+                        </ul>
+                        <div id="divt1">                       
+                                Soy la primer tabb
+                        </div>
+                        <div id="divt2">                            
+                                Soy la segunda tabb
+                        </div>
+                        <div id="divt3">                              
+                                Soy la tercer tabb
+                        </div>
+                </div>
+                <br>
         </body>
 
 </html>
